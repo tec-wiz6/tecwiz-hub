@@ -4,81 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TecWiz Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center.
-        }
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline.
-        }
-        .container {
-            padding: 20px.
-        }
-        .post {
-            background: #fff;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1).
-        }
-        .post img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px.
-        }
-        .post h2 {
-            margin: 10px 0.
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: #fff.
-        }
-        .social-icons a {
-            color: #fff;
-            margin: 0 10px;
-            font-size: 20px;
-            text-decoration: none.
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if ('Notification' in window) {
-                const notifyButton = document.getElementById('notify-btn');
-                notifyButton.addEventListener('click', () => {
-                    Notification.requestPermission().then(permission => {
-                        if (permission === 'granted') {
-                            new Notification('TecWiz Hub Notifications Enabled!', {
-                                body: 'You will now receive updates about new posts!',
-                                icon: 'https://i.imgur.com/Q3iNxsH.png' // Your icon URL
-                            });
-                        }
-                    });
-                });
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -88,24 +14,22 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVMMiNglYCJZpodOONQWlw1yGLlmK3z6Vyn5sccMth320PeA/viewform" target="_blank">Sign Up</a>
         </nav>
     </header>
-    <div class="container">
+    <main class="container">
         <section id="posts">
             <div class="post">
-                <img src="https://via.placeholder.com/600x300" alt="Tech Post 1">
+                <img src="https://cdn.pixabay.com/photo/2016/03/09/09/22/robot-1245959_960_720.jpg" alt="Tech Post 1">
                 <h2>Exciting Tech Innovations of 2024</h2>
                 <p>Discover the latest in AI, robotics, and more...</p>
             </div>
             <div class="post">
-                <img src="https://via.placeholder.com/600x300" alt="Tech Post 2">
+                <img src="https://cdn.pixabay.com/photo/2017/02/07/15/33/artificial-intelligence-2047423_960_720.jpg" alt="Tech Post 2">
                 <h2>Top Programming Trends</h2>
                 <p>Explore the frameworks and languages shaping the future...</p>
             </div>
         </section>
-        <button id="notify-btn" style="display: block; margin: 20px auto; padding: 10px 20px; font-size: 16px;">
-            Enable Notifications
-        </button>
-    </div>
-    <footer class="footer">
+        <button id="notify-btn">Enable Notifications</button>
+    </main>
+    <footer>
         <p>Follow me on:</p>
         <div class="social-icons">
             <a href="https://www.instagram.com/tecwiz6/" target="_blank">Instagram</a>
@@ -113,5 +37,22 @@
         </div>
         <p>&copy; 2024 TecWiz Hub. All Rights Reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if ('Notification' in window) {
+                const notifyButton = document.getElementById('notify-btn');
+                notifyButton.addEventListener('click', () => {
+                    Notification.requestPermission().then(permission => {
+                        if (permission === 'granted') {
+                            new Notification('TecWiz Hub Notifications Enabled!', {
+                                body: 'You will now receive updates about new posts!',
+                                icon: 'https://i.imgur.com/Q3iNxsH.png' // Icon URL
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
